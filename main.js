@@ -31,6 +31,14 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
+  // 複製 Instagram
+  const igElement = document.getElementById('instagram');
+  if (igElement) {
+    igElement.addEventListener('click', function() {
+      navigator.clipboard.writeText(igElement.textContent);
+      alert('Instagram 帳號已複製到剪貼簿！');
+    });
+  }
   // 進場動畫：使用 IntersectionObserver 加入 .in-view
   const io = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
