@@ -54,6 +54,38 @@ h2 {
 ul {
   padding-left: 20px;
 }
+
+/* Tag cloud for skills */
+.tag-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 14px;
+  align-items: center;
+}
+.tag {
+  display: inline-block;
+  padding: 8px 14px;
+  border-radius: 16px;
+  background: #fff;
+  color: #2c3e50;
+  border: 1px solid rgba(41,128,185,0.08);
+  box-shadow: 0 2px 6px rgba(41,128,185,0.04);
+  cursor: default;
+  transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
+  font-size: 1rem; /* 統一大小 */
+}
+.tag:hover { transform: translateY(-3px); box-shadow: 0 8px 18px rgba(41,128,185,0.12); }
+
+/* Alternate backgrounds: odd = white, even = light blue */
+.tag-cloud .tag:nth-child(odd) {
+  background: linear-gradient(180deg,#eaf6ff,#ddf7ff);
+  border-color: rgba(41,128,185,0.14);
+}
+.tag-cloud .tag:nth-child(even) {
+  background: #ffffff;
+  border-color: rgba(41,128,185,0.06);
+}
+
 #contact p {
   font-size: 1.1rem;
 }
