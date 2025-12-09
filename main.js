@@ -13,7 +13,6 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
-
   // 聯絡方式複製 email
   const emailElement = document.getElementById('email');
   if (emailElement) {
@@ -39,7 +38,6 @@ document.addEventListener('DOMContentLoaded', function() {
       alert('Instagram 帳號已複製到剪貼簿！');
     });
   }
-
   // 進場動畫：使用 IntersectionObserver 加入 .in-view
   const io = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -50,6 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   }, { threshold: 0.12 });
+
 
   document.querySelectorAll('.timeline-item, .card').forEach(el => io.observe(el));
 });
