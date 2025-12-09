@@ -1,5 +1,10 @@
+html {
+  font-size: 22px; /* 根字級設定為 22px，讓 rem 單位放大 4px */
+}
+
 body {
   font-family: '標楷體', 'PMingLiU', Arial, sans-serif;
+  font-size: 1rem; /* 使用根字級（22px）為基準 */
   background: #f4f4f4;
   margin: 0;
   padding: 0;
@@ -31,7 +36,7 @@ nav a {
   transition: color 0.2s;
 }
 nav a:hover {
-  color: #ffd700;
+  color: #7472ee;
 }
 section {
   background: #fff;
