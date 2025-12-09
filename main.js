@@ -49,6 +49,5 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }, { threshold: 0.12 });
 
-
   document.querySelectorAll('.timeline-item, .card').forEach(el => io.observe(el));
 });
