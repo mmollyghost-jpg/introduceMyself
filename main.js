@@ -39,7 +39,6 @@ document.addEventListener('DOMContentLoaded', function() {
       alert('Instagram 帳號已複製到剪貼簿！');
     });
   }
-
   // 進場動畫：使用 IntersectionObserver 加入 .in-view
   const io = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
