@@ -1,4 +1,15 @@
 document.addEventListener('DOMContentLoaded', function() {
+  // 將標籤雲依據 data-percent 由大到小排序
+  const tagCloud = document.querySelector('.tag-cloud');
+  if (tagCloud) {
+    const tags = Array.from(tagCloud.querySelectorAll('.tag'));
+    tags.sort((a, b) => {
+      const pa = parseInt(a.getAttribute('data-percent') || '0', 10);
+      const pb = parseInt(b.getAttribute('data-percent') || '0', 10);
+      return pb - pa; // 由大到小
+    });
+    tags.forEach(t => tagCloud.appendChild(t));
+  }
   // 平滑滾動到各區塊
   document.querySelectorAll('nav a').forEach(function(link) {
     link.addEventListener('click', function(e) {

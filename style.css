@@ -1,5 +1,5 @@
 html {
-  font-size: 22px; /* 根字級設定為 22px，讓 rem 單位放大 4px */
+  font-size: 20px; /* 調小一點：設定為 20px */
 }
 
 body {
@@ -63,13 +63,15 @@ ul {
 /* Tag cloud for skills */
 .tag-cloud {
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px 14px;
+  flex-wrap: nowrap;
+  gap: 12px 16px;
   align-items: center;
+  white-space: nowrap; /* 保持單排 */
+  overflow-x: visible; /* 不需橫向捲動 */
 }
 .tag {
   display: inline-block;
-  padding: 8px 14px;
+  padding: 10px 16px;
   border-radius: 16px;
   background: #fff;
   color: #2c3e50;
@@ -77,8 +79,13 @@ ul {
   box-shadow: 0 2px 6px rgba(41,128,185,0.04);
   cursor: pointer;
   text-decoration: none; /* 取消底線 */
+  position: relative;
   transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
-  font-size: 1rem; /* 統一大小 */
+  font-size: 1.1rem; /* 加大字體 */
+  margin-right: 0; /* 移除右邊距，用 gap 控制 */
+  flex-shrink: 0; /* 防止標籤被壓縮 */
+  flex-grow: 1; /* 讓標籤平均分配空間填滿一行 */
+  text-align: center; /* 文字置中 */
 }
 .tag:hover { transform: translateY(-3px); box-shadow: 0 8px 18px rgba(41,128,185,0.12); text-decoration: none; }
 
@@ -90,6 +97,34 @@ ul {
 .tag-cloud .tag:nth-child(even) {
   background: #ffffff;
   border-color: rgba(41,128,185,0.06);
+}
+
+/* 顯示 data-percent 為徽章 */
+.tag::after {
+  content: attr(data-percent) "%";
+  display: inline-block;
+  margin-left: 4px;
+  background: #2980b9;
+  color: #fff;
+  font-size: 12px; /* 調大到 12px */
+  padding: 3px 6px;
+  border-radius: 10px;
+  vertical-align: middle;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  opacity: 0; /* 預設隱藏 */
+  transform: scale(1);
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+/* 在淺藍背景時讓徽章顏色更深以維持對比 */
+.tag-cloud .tag:nth-child(odd)::after {
+  background: #1f6fa8;
+}
+
+/* hover 顯示並放大百分比徽章 */
+.tag:hover::after {
+  opacity: 1;
+  transform: scale(1.3);
 }
 
 #contact p {
