@@ -75,11 +75,12 @@ ul {
   color: #2c3e50;
   border: 1px solid rgba(41,128,185,0.08);
   box-shadow: 0 2px 6px rgba(41,128,185,0.04);
-  cursor: default;
+  cursor: pointer;
+  text-decoration: none; /* 取消底線 */
   transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
   font-size: 1rem; /* 統一大小 */
 }
-.tag:hover { transform: translateY(-3px); box-shadow: 0 8px 18px rgba(41,128,185,0.12); }
+.tag:hover { transform: translateY(-3px); box-shadow: 0 8px 18px rgba(41,128,185,0.12); text-decoration: none; }
 
 /* Alternate backgrounds: odd = white, even = light blue */
 .tag-cloud .tag:nth-child(odd) {
